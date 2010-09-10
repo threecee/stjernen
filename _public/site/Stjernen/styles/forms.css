@@ -1,0 +1,121 @@
+h1.formtitle {
+margin: 0;
+}
+span.subtitle {
+display: block;
+margin: 0 0 15px 0;
+}
+form {
+margin: 0;
+padding: 0;
+font-size: 11px;
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+input, textarea, select, button, option {
+font-size: 11px;
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+color: #333;
+}
+input.text, textarea, select {
+border: 1px solid #ccc;
+padding: .1em;
+}
+input.error, textarea.error {
+background-color: #F0F0F0;
+border-color: #be0000;
+}
+input.button {
+white-space: nowrap;
+}
+.required {
+color: #be0000;
+}
+table.operaform {
+width: 100%;
+border-collapse:collapse;
+border-spacing: 0;
+font-size: 11px;
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+.operaform td, .operaform th {
+background:#f3f3f3;
+padding:5px;
+border-collapse:collapse;
+border:1px solid #fff;
+font-size: 11px;
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+.operaform td {
+border-right: none;
+font-size: 11px;
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+.operaform td {
+border-left: none;
+font-size: 11px;
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+.operaform th {
+background:#eee;
+width: 40%;
+color: #333;
+font-weight: normal;
+text-align: left;
+font-size: 11px;
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+.operaform th.left {
+vertical-align: top;
+}
+.operaform td {
+width: 60%;
+color: #333;
+font-size: 11px;
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+.operaform td input.text, .operaform td textarea {
+width: 99%;
+font-size: 11px;
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+.operaform textarea {
+border: 1px solid #ccc;
+width: 99%;
+font-size: 11px;
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+.operaform select {
+border: 1px solid #ccc;
+width: 99%;
+font-size: 11px;
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+.operaform label.help {
+cursor: default;
+border-bottom: 1px #444 dashed;
+}
+.operaform td.error {
+color: #f00;
+padding-bottom: 0;
+}
+h2.blue, h2.formtitle {
+background:#fbfbfb;
+color:#1c6295;
+font-size: 11px;
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+padding:3px 5px;
+margin:15px 0 1px 0 !important;
+margin:15px 0 0 0;
+border: 1px solid #e0e0e0;
+}
+.operaform th.blue, .operaform th.formtitle {
+background:#fbfbfb;
+color:#1c6295;
+font-size: 11px;
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+padding:3px 5px;
+margin:0;
+}
+.operaform tr.form-separator th {
+	width: 100%;
+}

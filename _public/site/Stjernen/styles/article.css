@@ -1,0 +1,189 @@
+
+/* relations */
+div#item div#images {
+background-color: #f3f3f3;
+margin: 0 0 10px 10px;
+float: right;
+}
+
+div#item div#images div.image img {
+margin: 0;
+padding: 0;
+}
+div#item div#images div.image div.text {
+font-size: .85em;
+padding: 5px;
+margin: 0;
+color: #999;
+clear: both;
+}
+
+div#item div#relations {
+margin: 0 0 10px 10px;
+float: right;
+}
+div#item div.related-frame {
+margin-bottom: 10px;
+}
+div#item div#relations div#images {
+background-color: #f3f3f3;
+margin: 0 0 10px 0;
+float: none;
+}
+div#item div#relations div#images div.image img {
+margin: 0;
+padding: 0;
+}
+div#item div#relations div#images div.image div.text {
+font-size: .85em;
+padding: 5px;
+margin: 0;
+color: #999;
+clear: both;
+}
+div#relations h4 {
+background:#fbfbfb;
+color:#1c6295;
+font-size: 11px;
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+padding:3px 5px;
+margin:0 0 1px 0 !important;
+margin:0 0 0 0;
+border: 1px solid #e0e0e0;
+}
+div#relations ul.related {
+margin: 0 0 0 0;
+padding: 0;
+list-style: none;
+border: 1px solid #e0e0e0;
+font-size: 10px;
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+div#relations ul.related li {
+/*
+background: transparent url(../images/dot.gif) no-repeat 5px center;
+padding: 3px 5px 3px 15px;
+ */
+padding: 3px 5px;
+font-size: 10px;
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+div#relations ul.related li.dark {
+background-color: #f3f3f3;
+}
+div#relations ul.related li a {
+font-size: 10px;
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+text-decoration: none;
+}
+div#relations ul.related li a.external {
+padding-right: 15px;
+}
+div#relations ul.related li a:hover {
+text-decoration: underline;
+}
+div#relations ul.related li img.icon {
+vertical-align: top;
+}
+/* items styles */
+div.item{
+	border-top: 1px solid #e0e0e0;
+	padding: 1em 5px 1em 5px;
+	clear: both;
+	margin: 0;
+}
+
+
+div.mainColumn div.item{
+background-color:white;
+color:black;
+}
+
+
+div.item img{
+	float: left;
+}
+
+th.icons {
+width: 16px;
+}
+
+div.item.first{
+	border: 0;
+}
+
+div.item img {
+	margin: 0 10px 10px 0;
+}
+
+div.item h2, div.item h3 {
+	margin: 0;
+	font-weight: normal;
+	line-height: .9em;
+	
+
+}
+
+div.item h2 a, div.item h3 a{
+	text-decoration: none;
+}
+
+div.item h2, div.item h3{
+	margin: 1em 0 0 0;
+}
+
+div.byline{
+	font-size: .85em;
+	background-color: #f3f3f3;
+	border: 1px solid #e0e0e0;
+	color: #999;
+	margin: 0 0 10px 10px;
+	float: right;
+	width: 194px;
+}
+div.byline img {
+float: left;
+border-right: 1px solid #e0e0e1;
+margin-right: 4px;
+}
+div.byline-inner {
+padding: 0px;
+float: left;
+}
+
+
+
+div.item p{
+	margin: .5em 0 0.5em 0;
+}
+
+p.read-more{
+	text-align: left;
+	font-size: 1em;
+}
+
+div.item h1{
+margin: 0 0 10px 0;
+}
+span.byline{
+color: #999;
+margin-left: 10px;
+float: right;
+font-size: 10px;
+}
+p.preface {
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+.related-frame ul a.external {
+background: url(../images/external.png) center right no-repeat;
+}
+.editor a.external, #faq a.external {
+background: url(../images/external.png) center right no-repeat;
+padding-right: 15px;
+}
+.editor ul, #faq ul {
+list-style-image: url(../images/dot.gif);
+}
+/* end items styles */

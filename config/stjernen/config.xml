@@ -1,0 +1,32 @@
+<config>
+    <multilingual>false</multilingual>
+    <accessibility-text-size>false</accessibility-text-size>
+    <accessibility-contrast>false</accessibility-contrast>
+    <passport>
+        <email-login>true</email-login>
+        <edit-display-name>true</edit-display-name>
+        <set-password>true</set-password>
+        <admin-name>Per Allan Johansson</admin-name>
+        <admin-email>per.allan.johansson@bekk.no</admin-email>
+        <join-group-keys>
+            <join-group-key>3B9B70278261DF07656758768F86CB8F94451090</join-group-key>
+        </join-group-keys>
+        <groups>
+            <group key="group-1-key">Group 1 name</group>
+            <group key="group-2-key">Group 2 name</group>
+        </groups>
+    </passport>
+    <parameters>
+        <parameter path="/" name="front-page" key="0">hjem</parameter>
+        <parameter path="/" name="search-result">/search-result</parameter>
+        <parameter path="/" name="sitemap">/sidekart</parameter>
+        <parameter path="/" name="rss">/rss</parameter>
+        <parameter path="/" name="google-tracker">123123123</parameter>
+        <parameter path="/" name="google-verify">asdasdasdas</parameter>
+        <parameter path="/" name="meta-generator">Enonic CMS</parameter>
+        <parameter path="/" name="meta-author">Per Allan Johansson</parameter>
+    </parameters>
+    <skins>
+        <skin name="stjernen"/>
+    </skins>
+</config>

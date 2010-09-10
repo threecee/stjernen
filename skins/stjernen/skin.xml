@@ -1,0 +1,155 @@
+<skin name="stjernen">
+    <device-classes>
+        <device-class name="pc,unknown">
+            <menu>
+                <toplevels>
+                    <toplevel fixed="false"/>
+                    <toplevel fixed="false"/>
+                    <toplevel fixed="false"/>
+                </toplevels>
+                <sublevels>
+                    <sublevel/>
+                    <sublevel/>
+                    <sublevel/>
+                    <sublevel/>
+                    <sublevel/>
+                </sublevels>
+                <footer>true</footer>
+                <breadcrumb>true</breadcrumb>
+            </menu>
+            <layout>
+                <width>955</width>
+                <margin>0</margin>
+                <regions>
+                    <region name="north">
+                        <width>955</width>
+                        <padding>0</padding>
+                        <framepadding>0</framepadding>
+                        <frameborder>0</frameborder>
+                    </region>
+                    <region name="west">
+                        <width>306</width>
+                        <padding>0</padding>
+                        <framepadding>0</framepadding>
+                        <frameborder>0</frameborder>
+                    </region>
+                    <region name="center">
+                        <width>630</width>
+                        <padding>0</padding>
+                        <framepadding>0</framepadding>
+                        <frameborder>0</frameborder>
+                    </region>
+                    <region name="east">
+                        <width>306</width>
+                        <padding>0</padding>
+                        <framepadding>0</framepadding>
+                        <frameborder>0</frameborder>
+                    </region>
+                    <region name="south">
+                        <width>955</width>
+                        <padding>0</padding>
+                        <framepadding>0</framepadding>
+                        <frameborder>0</frameborder>
+                    </region>
+                </regions>
+            </layout>
+            <image>
+                <filters>
+                </filters>
+                <sizes>
+                    <size name="full">
+                        <filter>scalewidth</filter>
+                        <width>1</width>
+                    </size>
+                    <size name="wide">
+                        <filter>scalewide</filter>
+                        <width>1</width>
+                        <height>0.4</height>
+                    </size>
+                    <size name="regular">
+                        <filter>scalewidth</filter>
+                        <width>0.4</width>
+                    </size>
+                    <size name="list">
+                        <filter>scalewidth</filter>
+                        <width>0.3</width>
+                    </size>
+                    <size name="square">
+                        <filter>scalesquare</filter>
+                        <size>0.4</size>
+                    </size>
+                    <size name="thumbnail">
+                        <filter>scalesquare</filter>
+                        <size>0.1</size>
+                    </size>
+                </sizes>
+            </image>
+            <styles>
+                <style>/_public/sites/stjernen/screen.css</style>
+                <style condition="lt IE 8">/_public/sites/stjernen/ie.css</style>
+            </styles>
+        </device-class>
+        <device-class name="mobile">
+            <layout>
+                <width>320</width>
+                <margin>0</margin>
+                <regions>
+                    <region name="north">
+                        <width>320</width>
+                        <padding>0</padding>
+                        <framepadding>10</framepadding>
+                        <frameborder>0</frameborder>
+                    </region>
+                    <region name="center">
+                        <width>320</width>
+                        <padding>12</padding>
+                        <framepadding>10</framepadding>
+                        <frameborder>1</frameborder>
+                    </region>
+                    <region name="south">
+                        <width>320</width>
+                        <padding>0</padding>
+                        <framepadding>10</framepadding>
+                        <frameborder>0</frameborder>
+                    </region>
+                </regions>
+            </layout>
+            <image>
+                <filters>
+                    <filter>rounded(4)</filter>
+                </filters>
+                <sizes>
+                    <size name="full">
+                        <filter>scalewidth</filter>
+                        <width>1</width>
+                    </size>
+                    <size name="wide">
+                        <filter>scalewide</filter>
+                        <width>1</width>
+                        <height>0.4</height>
+                    </size>
+                    <size name="regular">
+                        <filter>scalewidth</filter>
+                        <width>0.4</width>
+                    </size>
+                    <size name="list">
+                        <filter>scalewidth</filter>
+                        <width>0.3</width>
+                    </size>
+                    <size name="square">
+                        <filter>scalesquare</filter>
+                        <size>0.4</size>
+                    </size>
+                    <size name="thumbnail">
+                        <filter>scalesquare</filter>
+                        <size>0.1</size>
+                    </size>
+                </sizes>
+            </image>
+            <styles>
+                <style>/_public/sites/stjernen/screen.css</style>
+                <style>/_public/sites/advanced/mobile.css</style>
+            </styles>
+        </device-class>
+    </device-classes>
+</skin>

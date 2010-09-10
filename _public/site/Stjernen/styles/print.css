@@ -1,0 +1,329 @@
+@import url("forms.css");
+@import url("article.css");
+
+body, input, textarea, button {
+font-family: 'trebuchet ms', verdana, sans-serif;
+}
+body {
+font-size: .8em;
+margin: 0;
+padding: 0;
+}
+.print {
+	display: block;
+}
+img#logoPrint {
+	width: 90px;
+	height: 22px;
+	margin-bottom: 10px;
+}
+.screen {
+	display: none;
+}
+a {
+text-decoration: underline;
+color: #1B6393;
+}
+a:hover {
+text-decoration: none;
+}
+h1 {
+font-size: 1.2em;
+margin-top: 0;
+}
+h1.mainh1 {
+font-size: 1.2em;
+margin-top: 0;
+}
+h2 {
+font-size: 1.2em;
+}
+h3 {
+font-size: 1.1em;
+}
+h4 {
+font-size: 1em;
+}
+h1, h2, h3, h4 {
+font-family: georgia, sans-serif;
+color: #1A6495;
+}
+fieldset, img {
+border: none;
+}
+/* framework styles */
+div#leftColumn, div#rightColumn, div#topbar, ul.menu, div#breadcrumbs, div.login, div#footer div.rss, div#navigationHeader, ul#navigationMenu, div#back-top {
+	display: none;
+}
+div.content {
+	float: left;
+	padding: 0;
+	margin: 0;
+	min-height: 35em;
+	height: auto !important;
+	height: 35em;
+}
+div.content div.inner-content {
+	padding: 0 0 20px 0;
+}
+div.content.twoColumns div.inner-content {
+	padding: 0 0 20px 0;
+}
+div.framework.twoColumnsRight div.content.twoColumns div.inner-content {
+	padding: 0 0 20px 0;
+}
+div.framework.twoColumnsLeft div.content.twoColumns div.inner-content {
+	padding: 0 0 20px 0;
+}
+div.framework.oneColumn div.content.twoColumns div.inner-content {
+	padding: 0 0 20px 0;
+}
+div#footer {
+margin-top: 20px;
+background-color: #f3f3f3;
+border: 1px solid #e0e0e0;
+padding: 0 5px;
+height: 24px;
+line-height: 24px;
+color: #999;
+font-size: 11px;
+clear: both;
+}
+#breadcrumbs {
+margin-bottom: 10px;
+background-color: #f3f3f3;
+border: 1px solid #e0e0e0;
+padding: 0 5px;
+color: #999;
+font-family: 'trebuchet ms', verdana, geneva, arial, helvetica, sans-serif;
+font-size: 11px;
+height: 24px;
+line-height: 24px;
+clear: both;
+}
+#breadcrumbs a {
+color: #1b6392;
+}
+/* end framework styles */
+
+/* frame styles */
+div.frame {
+margin-bottom: 15px;
+}
+div.frame h4 {
+	background-color: #F3F3F3;
+	color: #1B6392;
+	border: 1px solid #E0E0E1;
+	padding: 5px 8px;
+	margin: 0;
+}
+
+div.frame div {
+	padding: 5px 8px;
+	overflow: hidden;
+}
+
+div.frame div.box{
+	border: 1px solid #E0E0E1;
+	border-top: 0;
+	background-color: #FBFBFB;	
+}
+/* end frame styles */
+
+/* errorhandler styles */
+div#errorhandler h2 {
+	margin: 0;
+	color: #F00;
+}
+/* end errorhandler styles */
+
+/* list styles */
+table.list {
+	width: 100% !important;
+	border: 1px solid #e0e0e0;
+	margin-top: 10px;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+table.list input.text,
+table.list textarea {
+	width: 90%;
+}
+
+table.list input.radio {
+	vertical-align: middle;
+}
+
+table.list th {
+	text-align: left;
+	background-color: #f3f3f3;
+	font-family: georgia, sans-serif;
+	color: #1C6391;
+}
+table.list td {
+	border-top: 1px solid #e0e0e0;
+}
+table.list.form th.title {
+	text-align: left;
+	background-color: #DDD;
+	font-weight: bold;
+}
+
+table.list.form td {
+	vertical-align: top;
+	border-top: #e0e0e0;
+}
+table.list.form th {
+	vertical-align: top;
+	background-color: #fff;
+	font-weight: normal;
+	color: #222;
+}
+
+table.list.form button {
+	margin-right: .3em;
+}
+
+table.list td.error {
+	color: #F00;
+	padding-bottom: 0;
+}
+
+table.list label.help {
+	cursor: default;
+	border-bottom: 1px #ccc dashed;
+}
+
+table.list tr.separator td {
+	font-size: 50%;
+}
+
+table.list tr.formSeparator div {
+	padding-bottom: .2em;
+	border-bottom: 1px solid #CCC;
+	margin: .5em 0 .5em 0;
+	font-weight: bold;
+}
+
+table.list tr.dark td {
+	background-color: #Fbfbfb;
+}
+
+table.list th,
+table.list td {
+	padding: .2em .4em .2em .4em;
+}
+
+table.list th.nowrap,
+table.list td.nowrap {
+	white-space: nowrap;
+}
+
+table.list th.right,
+table.list td.right {
+	text-align: right;
+}
+table.person {
+	width: 100% !important;
+	border: 1px solid #e0e0e0;
+	margin-top: 10px;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+table.person td.image img {
+margin: 0 0 0 0 !important;
+margin: 0 0 0 -3px;
+padding: 0;
+float: left;
+}
+table.person th, table.person td {
+	padding: .2em .2em .2em .2em;
+	vertical-align: middle;
+	background-color: #fff;
+}
+table.smallperson {
+width: 336px !important;
+border: 1px solid #e0e0e0;
+border-spacing: 0;
+border-collapse: collapse;
+}
+table.smallperson th, table.smallperson td {
+padding: .2em .2em .2em .2em;
+vertical-align: middle;
+}
+table.smallperson td {
+width: 70%;
+}
+table.smallperson th {
+width: 30%;
+color: #333333;
+font-weight: normal;
+background-color: #fff;
+border-top: 1px solid #e0e0e0;
+}
+
+table.smallperson th.dark, table.smallperson td.dark {
+background-color: #fbfbfb;
+}
+/* end list styles */
+
+/* list styles */
+div.frame ul {
+	margin: 0;
+	padding: 0;
+	padding-left: 12px;
+	margin-left: 7px;
+	list-style: url(../images/bullet.gif);
+}
+
+div.frame li{
+	padding-bottom: .5em;
+}
+
+div.frame .date{
+	color: #999;
+	margin: 0;
+}
+
+div.frame span{
+	display: block;
+	margin-left: 0;
+	text-indent: 0;
+}
+/* end list styles */
+
+/* FAQ */
+#question {
+margin-bottom: 20px;
+}
+#faq {
+width: 100%;
+float: left;
+}
+#qa a.activefaq {
+background-color: #999;
+color: #fff;
+text-decoration: none;
+}
+.spacer {
+width: 100%;
+height: 1px;
+line-height: 1px;
+}
+form#formFaqSearch {
+clear: both;
+}
+form#formFaqSearch input#q2 {
+border: 1px solid #ccc;
+margin-right: 2px;
+padding-left: 3px;
+}
+form#formFaqSearch input.search-button {
+background-color: #888;
+color: #ccc;
+border: 1px solid #ccc;
+padding-left: 2px;
+padding-right: 2px;
+margin: 0;
+}

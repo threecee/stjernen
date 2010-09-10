@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><xsl:stylesheet exclude-result-prefixes="saxon xs portal" version="2.0"     xmlns:portal="http://www.enonic.com/cms/xslt/portal"     xmlns:saxon="http://saxon.sf.net/"    xmlns:xs="http://www.w3.org/2001/XMLSchema"     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">    <xsl:output indent="yes" method="xhtml" omit-xml-declaration="yes"/>    <xsl:include href="/shared/includes/displayImage.xsl"/>    <xsl:include href="/site/Stjernen/includes/globalVars.xsl"/>    <xsl:include href="/shared/includes/formatDate.xsl"/>    <xsl:param as="xs:integer" name="imageMaxWidth" select="296"/>    <xsl:include href="/shared/includes/replaceSubstring.xsl"/>    <xsl:template match="/">        <div class="bannerbox">            <xsl:comment>laginformasjon</xsl:comment>            <xsl:apply-templates select="/result/contents/content/contentdata/fritekst"/>        </div>    </xsl:template>
+    <xsl:template match="fritekst">        <h2><xsl:value-of select="overskrift"/></h2>        <div class="boxinsidepadding">                        <xsl:copy-of select="tekst/node()" />        </div>    </xsl:template>
+ 
+   
+    
+
+</xsl:stylesheet>
