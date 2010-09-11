@@ -15,13 +15,8 @@
   <xsl:template match="/">
     <xsl:choose>
       <xsl:when test="/result/contents/content">
-        <div class="schedule">
-            <h2><xsl:value-of select="/result/contents/content/heading"/></h2>
-
-            <xsl:call-template name="kamper"><xsl:with-param name="type">Treningskamp</xsl:with-param></xsl:call-template>
-            <xsl:call-template name="kamper"><xsl:with-param name="type">Seriekamp</xsl:with-param></xsl:call-template>
-            <xsl:call-template name="kamper"><xsl:with-param name="type">Sluttspill</xsl:with-param></xsl:call-template>
-            <xsl:call-template name="kamper"><xsl:with-param name="type">Kvalifiseringsspill</xsl:with-param></xsl:call-template>
+        <div class="gamecenter">
+            <xsl:call-template name="kamper" />
         </div>
       </xsl:when>
       <xsl:otherwise>
@@ -30,12 +25,9 @@
   </xsl:template>
 
     <xsl:template name="kamper">
-        <xsl:param name="type" select="null"/>
-        <h3 class="gametype"><xsl:value-of select="$type"/></h3>
         <ul class="games">
-            <xsl:for-each-group select="/result/contents/content/contentdata/games[type=$type]" group-by="year-from-date(gamedate)">
+            <xsl:for-each-group select="/result/contents/content/contentdata/games" group-by="year-from-date(gamedate)">
                 <xsl:for-each-group select="current-group()" group-by="month-from-date(gamedate)">
-                    <h1 class="monthHeading"><xsl:value-of select="stjernen:capitalize(format-date(gamedate, '[MNn] [Y]', 'no', (), ()))"/></h1>
                     <xsl:for-each select="current-group()"><xsl:sort select="gametime" order="ascending"/>
                         <xsl:apply-templates select="current()"/>
                     </xsl:for-each>
@@ -69,9 +61,25 @@
             </xsl:otherwise>
             </xsl:choose>
         </span>
-        <span class="goalhome"><xsl:value-of select="/result/contents/relatedcontents/content[@key = current()/match-report/@key]/contentdata/goal-home"/></span>-
-        <span class="goapopponenet"><xsl:value-of select="/result/contents/relatedcontents/content[@key = current()/match-report/@key]/contentdata/goal-opponent"/></span>
-        <span class="matchreport"><a href="{portal:createContentUrl(match-report/@key, ())}">referat</a></span>
+        <span class="matchinfo">
+            <xsl:choose>
+                <xsl:when test="match-report/@key != ''">
+                    <a href="{portal:createContentUrl(match-report/@key, ())}">referat</a>
+                </xsl:when>
+                <xsl:otherwise>
+                    <a href="{portal:createContentUrl(before/@key, ())}">før kampen</a>
+                </xsl:otherwise>
+            </xsl:choose>
+        </span>
+        <span class="logo">
+            <xsl:call-template name="utilities.display-image">
+                            <xsl:with-param name="region-width" select="$region-width"/>
+                            <xsl:with-param name="filter">scalewide(100, 100, 0)</xsl:with-param>
+                            <xsl:with-param name="title" select="title"/>
+                            <xsl:with-param name="image" select="/result/contents/relatedcontents/content[@key = /result/contents/relatedcontents/content[@key = current()/hometeam/@key]/contentdata/image/@key]"/>
+            </xsl:call-template>
+
+        </span>
 
     </li>
   </xsl:template>
