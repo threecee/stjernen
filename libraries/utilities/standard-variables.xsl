@@ -13,7 +13,7 @@
     <xsl:variable name="site" select="/result/context/querystring/parameter[@name = '_config-site']"/>
     
     <!-- Configuration variables -->
-    <xsl:variable name="config-site" select="document(concat(/result/context/site/path-to-home-resources, '/sites/', $site, '/config.xml'))/config"/>
+    <xsl:variable name="config-site" select="document(concat(/result/context/site/path-to-home-resources, '/config.xml'))/config"/>
     <xsl:variable name="config-device-class" select="document(concat('/skins/', $site, '/', $skin, '/skin.xml'))/skin/device-classes/device-class"/>
     <xsl:variable name="config-device-class-current" select="if ($config-device-class[tokenize(@name, ',')[. = $device-class]]) then $config-device-class[tokenize(@name, ',')[. = $device-class]] else $config-device-class[1]"/>
     <xsl:variable name="config-filter">

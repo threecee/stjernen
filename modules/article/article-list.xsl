@@ -32,12 +32,14 @@
         </xsl:call-template>
         <div class="list clear clearfix append-bottom">
           <xsl:apply-templates select="/result/contents/content"/>
+          <!-- 
           <xsl:if test="$rss-page">
             <a href="{portal:createUrl($rss-page, ('articleSectionId', portal:getPageKey()))}" class="rss">
               <img src="{portal:createResourceUrl(concat($path-to-skin, '/images/icon-rss.png'))}" class="icon text" alt="RSS {portal:localize('icon')}"/>
               <xsl:value-of select="portal:localize('Articles-as-rss-feed')"/>
             </a>
           </xsl:if>
+          -->
         </div>
         <xsl:call-template name="navigation-menu.navigation-menu">
           <xsl:with-param name="parameters" tunnel="yes" select="$url-parameters"/>
@@ -82,7 +84,9 @@
         <span class="byline">
           <xsl:value-of select="util:format-date(@publishfrom, /result/context/@languagecode, 'short', true())"/>
         </span>
+        <!-- 
         <xsl:value-of select="util:crop-text(contentdata/preface, xs:integer(floor($region-width * 0.5)))"/>
+        -->
       </p>
       <a href="{portal:createContentUrl(@key,())}" title="{title}">
         <xsl:value-of select="concat(portal:localize('Read-more'), ' »')"/>
