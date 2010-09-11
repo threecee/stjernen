@@ -12,16 +12,14 @@
 
   <xsl:output indent="no" media-type="text/html" method="xhtml" omit-xml-declaration="yes"/>
 
-  <xsl:variable name="url-parameters" select="/result/context/querystring/parameter[not(@name = 'index' or @name = 'id' or starts-with(@name, '_config-'))]"/>
-
   <xsl:template match="/">
     <xsl:choose>
       <xsl:when test="/result/contents/content">
         <div class="terminliste">
-            <h2><xsl:value-of select="/result/contents/content/title"/></h2>
+            <h2><xsl:value-of select="/result/contents/content/heading"/></h2>
 
-            <xsl:call-template name="kamper"><xsl:with-param name="type">Seriekamp</xsl:with-param></xsl:call-template>
             <xsl:call-template name="kamper"><xsl:with-param name="type">Treningskamp</xsl:with-param></xsl:call-template>
+            <xsl:call-template name="kamper"><xsl:with-param name="type">Seriekamp</xsl:with-param></xsl:call-template>
             <xsl:call-template name="kamper"><xsl:with-param name="type">Sluttspill</xsl:with-param></xsl:call-template>
             <xsl:call-template name="kamper"><xsl:with-param name="type">Kvalifiseringsspill</xsl:with-param></xsl:call-template>
         </div>
@@ -35,10 +33,10 @@
         <xsl:param name="type" select="null"/>
         <h3><xsl:value-of select="$type"/></h3>
         <ul>
-            <xsl:for-each-group select="/result/contents/content/contentdata/kamper/kamp[type=$type]" group-by="year-from-date(dato)">
-                <xsl:for-each-group select="current-group()" group-by="month-from-date(dato)">
-                    <h1><xsl:value-of select="stjernen:capitalize(format-date(dato, '[MNn] [Y]', 'no', (), ()))"/></h1>
-                    <xsl:for-each select="current-group()"><xsl:sort select="klokkeslett" order="ascending"/>
+            <xsl:for-each-group select="/result/contents/content/contentdata/games[type=$type]" group-by="year-from-date(gamedate)">
+                <xsl:for-each-group select="current-group()" group-by="month-from-date(gamedate)">
+                    <h1><xsl:value-of select="stjernen:capitalize(format-date(gamedate, '[MNn] [Y]', 'no', (), ()))"/></h1>
+                    <xsl:for-each select="current-group()"><xsl:sort select="gametime" order="ascending"/>
                         <xsl:apply-templates select="current()"/>
                     </xsl:for-each>
                </xsl:for-each-group>
@@ -46,26 +44,26 @@
         </ul>
     </xsl:template>
 
-  <xsl:template match="kamp">
+  <xsl:template match="games">
     <li>
-        <span><xsl:value-of select="stjernen:capitalize(format-date(dato, '[FNn] [D01].[M01].[Y0001]', 'no', (), ()))"/></span>
-        <span><xsl:value-of select="klokkeslett"/></span>
+        <span><xsl:value-of select="stjernen:capitalize(format-date(gamedate, '[FNn] [D01].[M01].[Y0001]', 'no', (), ()))"/></span>
+        <span><xsl:value-of select="gametime"/></span>
 
-        <span><xsl:value-of select="/result/contents/relatedcontents/content[@key = current()/hjemmelag/@key]/contentdata/tittel"/></span>
-        <span><xsl:value-of select="/result/contents/relatedcontents/content[@key = current()/bortelag/@key]/contentdata/tittel"/></span>
+        <span><xsl:value-of select="/result/contents/relatedcontents/content[@key = current()/hometeam/@key]/contentdata/heading"/></span>
+        <span><xsl:value-of select="/result/contents/relatedcontents/content[@key = current()/opponent/@key]/contentdata/heading"/></span>
         <span>
             <xsl:choose>
             <xsl:when test="arena != ''">
                 <xsl:value-of select="arena"/>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:value-of select="/result/contents/relatedcontents/content[@key = current()/hjemmelag/@key]/contentdata/arena"/>                
+                <xsl:value-of select="/result/contents/relatedcontents/content[@key = current()/hometeam/@key]/contentdata/arena"/>
             </xsl:otherwise>
             </xsl:choose>
         </span>
-        <span><xsl:value-of select="/result/contents/relatedcontents/content[@key = current()/kampreferat/@key]/contentdata/goal-hjemme"/></span>-
-        <span><xsl:value-of select="/result/contents/relatedcontents/content[@key = current()/kampreferat/@key]/contentdata/goal-borte"/></span>
-        <span><a href="{portal:createContentUrl(forkampen/@key, ())}">referat</a></span>
+        <span><xsl:value-of select="/result/contents/relatedcontents/content[@key = current()/match-report/@key]/contentdata/goal-home"/></span>-
+        <span><xsl:value-of select="/result/contents/relatedcontents/content[@key = current()/match-report/@key]/contentdata/goal-opponent"/></span>
+        <span><a href="{portal:createContentUrl(match-report/@key, ())}">referat</a></span>
 
     </li>
   </xsl:template>
